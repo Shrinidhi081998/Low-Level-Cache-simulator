@@ -1,0 +1,13 @@
+# T06: Prefer invalid line over evicting valid line on miss
+8
+0 984DE132
+0 116DE12F
+0 100DE130
+0 999DE12E
+0 645DE10A
+0 846DE107
+0 211DE128
+0 777DE133
+3 999DE12E
+1 AAADE101
+9

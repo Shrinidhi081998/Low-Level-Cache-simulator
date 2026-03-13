@@ -1,0 +1,19 @@
+# Scenario S1: Fill one L1D set (index 0x3784) with reads.
+# Includes dump after every step for easy comparison.
+8
+0 984DE132
+9
+0 116DE12F
+9
+0 100DE130
+9
+0 999DE12E
+9
+0 645DE10A
+9
+0 846DE107
+9
+0 211DE128
+9
+0 777DE133
+9

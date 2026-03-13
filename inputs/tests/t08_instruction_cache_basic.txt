@@ -1,0 +1,5 @@
+# T08: Instruction cache path (opcode 2) miss then hit, visible in L1I dump
+8
+2 984DE132
+2 984DE132
+9

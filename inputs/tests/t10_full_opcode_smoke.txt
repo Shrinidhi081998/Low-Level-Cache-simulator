@@ -1,0 +1,10 @@
+# T10: Combined smoke test for opcodes 0/1/2/3/4/8/9
+8
+0 999DE132
+1 116DE123
+2 846DE10C
+4 116DE123
+3 999DE132
+9
+8
+9

@@ -1,0 +1,5 @@
+# T01: Data read miss then read hit (E -> S), then dump
+8
+0 984DE132
+0 984DE132
+9

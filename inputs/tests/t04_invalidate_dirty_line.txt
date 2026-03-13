@@ -1,0 +1,5 @@
+# T04: Invalidate dirty line (opcode 3) should write back and invalidate
+8
+1 AAADE101
+3 AAADE101
+9

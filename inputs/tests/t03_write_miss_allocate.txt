@@ -1,0 +1,4 @@
+# T03: Write miss allocate line in M and mark dirty
+8
+1 666DE135
+9

@@ -1,0 +1,12 @@
+# T07: Dirty eviction/writeback check (9th write miss into full set)
+8
+1 984DE132
+1 116DE123
+1 100DE101
+1 999DE12E
+1 645DE10A
+1 846DE107
+1 211DE128
+1 777DE133
+1 EDCDE101
+9

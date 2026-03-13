@@ -1,0 +1,7 @@
+# T09: Reset clears both L1I and L1D contents/stats
+8
+0 984DE132
+2 116DE12F
+9
+8
+9

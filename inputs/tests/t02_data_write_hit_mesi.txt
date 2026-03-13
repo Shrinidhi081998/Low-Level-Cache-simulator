@@ -1,0 +1,6 @@
+# T02: Read then write same line (hit path to M), repeated write stays M
+8
+0 116DE12F
+1 116DE123
+1 116DE101
+9

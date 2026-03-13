@@ -1,0 +1,2443 @@
+============================================================
+Trace File : t01_data_read_miss_hit.txt
+Mode       : 1
+============================================================
+  [L2] Read from L2           0x984DE132
+
+==== Cache Dump @ Trace Line 5 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   S    111  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Final Summary ====
+L1I stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+L1D stats:
+  Reads   : 2
+  Writes  : 0
+  Hits    : 1
+  Misses  : 1
+  HitRate : 50.00%
+============================================================
+
+============================================================
+Trace File : t02_data_write_hit_mesi.txt
+Mode       : 1
+============================================================
+  [L2] Read from L2           0x116DE12F
+  [L2] Write to L2            0x116DE123
+
+==== Cache Dump @ Trace Line 6 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x116   M    111  1     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Final Summary ====
+L1I stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+L1D stats:
+  Reads   : 1
+  Writes  : 2
+  Hits    : 2
+  Misses  : 1
+  HitRate : 66.67%
+============================================================
+
+============================================================
+Trace File : t03_write_miss_allocate.txt
+Mode       : 1
+============================================================
+  [L2] Read for Ownership from L2 0x666DE135
+  [L2] Write to L2            0x666DE135
+
+==== Cache Dump @ Trace Line 4 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    111  1     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Final Summary ====
+L1I stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+L1D stats:
+  Reads   : 0
+  Writes  : 1
+  Hits    : 0
+  Misses  : 1
+  HitRate : 0.00%
+============================================================
+
+============================================================
+Trace File : t04_invalidate_dirty_line.txt
+Mode       : 1
+============================================================
+  [L2] Read for Ownership from L2 0xAAADE101
+  [L2] Write to L2            0xAAADE101
+  [L2] Write to L2            0xAAADE100
+
+==== Cache Dump @ Trace Line 5 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Final Summary ====
+L1I stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+L1D stats:
+  Reads   : 0
+  Writes  : 1
+  Hits    : 0
+  Misses  : 1
+  HitRate : 0.00%
+============================================================
+
+============================================================
+Trace File : t05_snoop_dirty_line.txt
+Mode       : 1
+============================================================
+  [L2] Read for Ownership from L2 0xEDCDE101
+  [L2] Write to L2            0xEDCDE101
+  [L2] Return data to L2      0xEDCDE100
+
+==== Cache Dump @ Trace Line 5 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Final Summary ====
+L1I stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+L1D stats:
+  Reads   : 0
+  Writes  : 1
+  Hits    : 0
+  Misses  : 1
+  HitRate : 0.00%
+============================================================
+
+============================================================
+Trace File : t06_invalid_preferred_over_lru.txt
+Mode       : 1
+============================================================
+  [L2] Read from L2           0x984DE132
+  [L2] Read from L2           0x116DE12F
+  [L2] Read from L2           0x100DE130
+  [L2] Read from L2           0x999DE12E
+  [L2] Read from L2           0x645DE10A
+  [L2] Read from L2           0x846DE107
+  [L2] Read from L2           0x211DE128
+  [L2] Read from L2           0x777DE133
+  [L2] Read for Ownership from L2 0xAAADE101
+  [L2] Write to L2            0xAAADE101
+
+==== Cache Dump @ Trace Line 13 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    000  0     
+  0x3784   1    0x116   E    000  0     
+  0x3784   2    0x100   E    001  0     
+  0x3784   3    0xAAA   M    111  1     
+  0x3784   4    0x645   E    011  0     
+  0x3784   5    0x846   E    100  0     
+  0x3784   6    0x211   E    101  0     
+  0x3784   7    0x777   E    110  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Final Summary ====
+L1I stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+L1D stats:
+  Reads   : 8
+  Writes  : 1
+  Hits    : 0
+  Misses  : 9
+  HitRate : 0.00%
+============================================================
+
+============================================================
+Trace File : t07_dirty_eviction_writeback.txt
+Mode       : 1
+============================================================
+  [L2] Read for Ownership from L2 0x984DE132
+  [L2] Write to L2            0x984DE132
+  [L2] Read for Ownership from L2 0x116DE123
+  [L2] Write to L2            0x116DE123
+  [L2] Read for Ownership from L2 0x100DE101
+  [L2] Write to L2            0x100DE101
+  [L2] Read for Ownership from L2 0x999DE12E
+  [L2] Write to L2            0x999DE12E
+  [L2] Read for Ownership from L2 0x645DE10A
+  [L2] Write to L2            0x645DE10A
+  [L2] Read for Ownership from L2 0x846DE107
+  [L2] Write to L2            0x846DE107
+  [L2] Read for Ownership from L2 0x211DE128
+  [L2] Write to L2            0x211DE128
+  [L2] Read for Ownership from L2 0x777DE133
+  [L2] Write to L2            0x777DE133
+  [L2] Read for Ownership from L2 0xEDCDE101
+  [L2] Write to L2            0x984DE100
+  [L2] Write to L2            0xEDCDE101
+
+==== Cache Dump @ Trace Line 12 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0xEDC   M    111  1     
+  0x3784   1    0x116   M    000  1     
+  0x3784   2    0x100   M    001  1     
+  0x3784   3    0x999   M    010  1     
+  0x3784   4    0x645   M    011  1     
+  0x3784   5    0x846   M    100  1     
+  0x3784   6    0x211   M    101  1     
+  0x3784   7    0x777   M    110  1     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Final Summary ====
+L1I stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+L1D stats:
+  Reads   : 0
+  Writes  : 9
+  Hits    : 0
+  Misses  : 9
+  HitRate : 0.00%
+============================================================
+
+============================================================
+Trace File : t08_instruction_cache_basic.txt
+Mode       : 1
+============================================================
+  [L2] Read from L2           0x984DE132
+
+==== Cache Dump @ Trace Line 5 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   S    111  0     
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Final Summary ====
+L1I stats:
+  Reads   : 2
+  Writes  : 0
+  Hits    : 1
+  Misses  : 1
+  HitRate : 50.00%
+L1D stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+============================================================
+
+============================================================
+Trace File : t09_reset_clears_all.txt
+Mode       : 1
+============================================================
+  [L2] Read from L2           0x984DE132
+  [L2] Read from L2           0x116DE12F
+
+==== Cache Dump @ Trace Line 5 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x116   E    111  0     
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    111  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 7 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Final Summary ====
+L1I stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+L1D stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+============================================================
+
+============================================================
+Trace File : t10_full_opcode_smoke.txt
+Mode       : 1
+============================================================
+  [L2] Read from L2           0x999DE132
+  [L2] Read for Ownership from L2 0x116DE123
+  [L2] Write to L2            0x116DE123
+  [L2] Read from L2           0x846DE10C
+  [L2] Return data to L2      0x116DE100
+
+==== Cache Dump @ Trace Line 8 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x846   E    111  0     
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 10 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Final Summary ====
+L1I stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+L1D stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+============================================================
+
+============================================================
+Trace File : scenario_s1_fill_set_stepdump.txt
+Mode       : 1
+============================================================
+  [L2] Read from L2           0x984DE132
+
+==== Cache Dump @ Trace Line 5 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    111  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Read from L2           0x116DE12F
+
+==== Cache Dump @ Trace Line 7 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    110  0     
+  0x3784   1    0x116   E    111  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Read from L2           0x100DE130
+
+==== Cache Dump @ Trace Line 9 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    101  0     
+  0x3784   1    0x116   E    110  0     
+  0x3784   2    0x100   E    111  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Read from L2           0x999DE12E
+
+==== Cache Dump @ Trace Line 11 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    100  0     
+  0x3784   1    0x116   E    101  0     
+  0x3784   2    0x100   E    110  0     
+  0x3784   3    0x999   E    111  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Read from L2           0x645DE10A
+
+==== Cache Dump @ Trace Line 13 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    011  0     
+  0x3784   1    0x116   E    100  0     
+  0x3784   2    0x100   E    101  0     
+  0x3784   3    0x999   E    110  0     
+  0x3784   4    0x645   E    111  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Read from L2           0x846DE107
+
+==== Cache Dump @ Trace Line 15 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    010  0     
+  0x3784   1    0x116   E    011  0     
+  0x3784   2    0x100   E    100  0     
+  0x3784   3    0x999   E    101  0     
+  0x3784   4    0x645   E    110  0     
+  0x3784   5    0x846   E    111  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Read from L2           0x211DE128
+
+==== Cache Dump @ Trace Line 17 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    001  0     
+  0x3784   1    0x116   E    010  0     
+  0x3784   2    0x100   E    011  0     
+  0x3784   3    0x999   E    100  0     
+  0x3784   4    0x645   E    101  0     
+  0x3784   5    0x846   E    110  0     
+  0x3784   6    0x211   E    111  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Read from L2           0x777DE133
+
+==== Cache Dump @ Trace Line 19 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    000  0     
+  0x3784   1    0x116   E    001  0     
+  0x3784   2    0x100   E    010  0     
+  0x3784   3    0x999   E    011  0     
+  0x3784   4    0x645   E    100  0     
+  0x3784   5    0x846   E    101  0     
+  0x3784   6    0x211   E    110  0     
+  0x3784   7    0x777   E    111  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Final Summary ====
+L1I stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+L1D stats:
+  Reads   : 8
+  Writes  : 0
+  Hits    : 0
+  Misses  : 8
+  HitRate : 0.00%
+============================================================
+
+============================================================
+Trace File : scenario_s2_rw_snoop_stepdump.txt
+Mode       : 1
+============================================================
+  [L2] Read from L2           0x984DE132
+  [L2] Read from L2           0x116DE12F
+  [L2] Read from L2           0x100DE130
+  [L2] Read from L2           0x999DE12E
+  [L2] Read from L2           0x645DE10A
+  [L2] Read from L2           0x846DE107
+  [L2] Read from L2           0x211DE128
+  [L2] Read from L2           0x777DE133
+
+==== Cache Dump @ Trace Line 15 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    000  0     
+  0x3784   1    0x116   E    001  0     
+  0x3784   2    0x100   E    010  0     
+  0x3784   3    0x999   S    111  0     
+  0x3784   4    0x645   E    011  0     
+  0x3784   5    0x846   E    100  0     
+  0x3784   6    0x211   E    101  0     
+  0x3784   7    0x777   E    110  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Write to L2            0x116DE123
+
+==== Cache Dump @ Trace Line 17 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    000  0     
+  0x3784   1    0x116   M    111  1     
+  0x3784   2    0x100   E    001  0     
+  0x3784   3    0x999   S    110  0     
+  0x3784   4    0x645   E    010  0     
+  0x3784   5    0x846   E    011  0     
+  0x3784   6    0x211   E    100  0     
+  0x3784   7    0x777   E    101  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Read for Ownership from L2 0x666DE135
+  [L2] Write to L2            0x666DE135
+
+==== Cache Dump @ Trace Line 19 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    111  1     
+  0x3784   1    0x116   M    110  1     
+  0x3784   2    0x100   E    000  0     
+  0x3784   3    0x999   S    101  0     
+  0x3784   4    0x645   E    001  0     
+  0x3784   5    0x846   E    010  0     
+  0x3784   6    0x211   E    011  0     
+  0x3784   7    0x777   E    100  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Read for Ownership from L2 0x333DE12C
+  [L2] Write to L2            0x333DE12C
+
+==== Cache Dump @ Trace Line 21 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    110  1     
+  0x3784   1    0x116   M    101  1     
+  0x3784   2    0x333   M    111  1     
+  0x3784   3    0x999   S    100  0     
+  0x3784   4    0x645   E    000  0     
+  0x3784   5    0x846   E    001  0     
+  0x3784   6    0x211   E    010  0     
+  0x3784   7    0x777   E    011  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 23 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    101  1     
+  0x3784   1    0x116   M    100  1     
+  0x3784   2    0x333   M    110  1     
+  0x3784   3    0x999   S    011  0     
+  0x3784   4    0x645   E    000  0     
+  0x3784   5    0x846   S    111  0     
+  0x3784   6    0x211   E    001  0     
+  0x3784   7    0x777   E    010  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 25 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    100  1     
+  0x3784   1    0x116   M    011  1     
+  0x3784   2    0x333   M    101  1     
+  0x3784   3    0x999   S    010  0     
+  0x3784   4    0x645   E    000  0     
+  0x3784   5    0x846   S    110  0     
+  0x3784   6    0x211   E    001  0     
+  0x3784   7    0x777   S    111  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Read for Ownership from L2 0xABCDE128
+  [L2] Write to L2            0xABCDE128
+
+==== Cache Dump @ Trace Line 27 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    011  1     
+  0x3784   1    0x116   M    010  1     
+  0x3784   2    0x333   M    100  1     
+  0x3784   3    0x999   S    001  0     
+  0x3784   4    0xABC   M    111  1     
+  0x3784   5    0x846   S    101  0     
+  0x3784   6    0x211   E    000  0     
+  0x3784   7    0x777   S    110  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 29 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    010  1     
+  0x3784   1    0x116   M    111  1     
+  0x3784   2    0x333   M    011  1     
+  0x3784   3    0x999   S    001  0     
+  0x3784   4    0xABC   M    110  1     
+  0x3784   5    0x846   S    100  0     
+  0x3784   6    0x211   E    000  0     
+  0x3784   7    0x777   S    101  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Read for Ownership from L2 0x100DE101
+  [L2] Write to L2            0x100DE101
+
+==== Cache Dump @ Trace Line 31 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    001  1     
+  0x3784   1    0x116   M    110  1     
+  0x3784   2    0x333   M    010  1     
+  0x3784   3    0x999   S    000  0     
+  0x3784   4    0xABC   M    101  1     
+  0x3784   5    0x846   S    011  0     
+  0x3784   6    0x100   M    111  1     
+  0x3784   7    0x777   S    100  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Read for Ownership from L2 0xAAADE101
+  [L2] Write to L2            0xAAADE101
+
+==== Cache Dump @ Trace Line 33 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    000  1     
+  0x3784   1    0x116   M    101  1     
+  0x3784   2    0x333   M    001  1     
+  0x3784   3    0xAAA   M    111  1     
+  0x3784   4    0xABC   M    100  1     
+  0x3784   5    0x846   S    010  0     
+  0x3784   6    0x100   M    110  1     
+  0x3784   7    0x777   S    011  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Read for Ownership from L2 0xEDCDE101
+  [L2] Write to L2            0x666DE100
+  [L2] Write to L2            0xEDCDE101
+
+==== Cache Dump @ Trace Line 35 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0xEDC   M    111  1     
+  0x3784   1    0x116   M    100  1     
+  0x3784   2    0x333   M    000  1     
+  0x3784   3    0xAAA   M    110  1     
+  0x3784   4    0xABC   M    011  1     
+  0x3784   5    0x846   S    001  0     
+  0x3784   6    0x100   M    101  1     
+  0x3784   7    0x777   S    010  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Return data to L2      0xAAADE100
+
+==== Cache Dump @ Trace Line 37 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0xEDC   M    111  1     
+  0x3784   1    0x116   M    100  1     
+  0x3784   2    0x333   M    000  1     
+  0x3784   4    0xABC   M    011  1     
+  0x3784   5    0x846   S    001  0     
+  0x3784   6    0x100   M    101  1     
+  0x3784   7    0x777   S    010  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Final Summary ====
+L1I stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+L1D stats:
+  Reads   : 12
+  Writes  : 7
+  Hits    : 5
+  Misses  : 14
+  HitRate : 26.32%
+============================================================
+
+============================================================
+Trace File : scenario_s3_invalid_preferred_stepdump.txt
+Mode       : 1
+============================================================
+  [L2] Read from L2           0x984DE132
+  [L2] Read from L2           0x116DE12F
+  [L2] Read from L2           0x100DE130
+  [L2] Read from L2           0x999DE12E
+  [L2] Read from L2           0x645DE10A
+  [L2] Read from L2           0x846DE107
+  [L2] Read from L2           0x211DE128
+  [L2] Read from L2           0x777DE133
+  [L2] Write to L2            0x116DE123
+  [L2] Read for Ownership from L2 0x666DE135
+  [L2] Write to L2            0x666DE135
+  [L2] Read for Ownership from L2 0x333DE12C
+  [L2] Write to L2            0x333DE12C
+  [L2] Read for Ownership from L2 0xABCDE128
+  [L2] Write to L2            0xABCDE128
+  [L2] Read for Ownership from L2 0x100DE101
+  [L2] Write to L2            0x100DE101
+  [L2] Read for Ownership from L2 0xAAADE101
+  [L2] Write to L2            0xAAADE101
+  [L2] Read for Ownership from L2 0xEDCDE101
+  [L2] Write to L2            0x666DE100
+  [L2] Write to L2            0xEDCDE101
+  [L2] Return data to L2      0xAAADE100
+  [L2] Read for Ownership from L2 0xFFFDE101
+  [L2] Write to L2            0xFFFDE101
+
+==== Cache Dump @ Trace Line 26 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0xEDC   M    110  1     
+  0x3784   1    0x116   M    011  1     
+  0x3784   2    0x333   M    000  1     
+  0x3784   3    0xFFF   M    111  1     
+  0x3784   4    0xABC   M    010  1     
+  0x3784   5    0x846   S    000  0     
+  0x3784   6    0x100   M    100  1     
+  0x3784   7    0x777   S    001  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Final Summary ====
+L1I stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+L1D stats:
+  Reads   : 12
+  Writes  : 8
+  Hits    : 5
+  Misses  : 15
+  HitRate : 25.00%
+============================================================
+
+============================================================
+Trace File : scenario_s2_rw_snoop_stepdump.txt
+Mode       : 0
+============================================================
+
+==== Cache Dump @ Trace Line 15 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    000  0     
+  0x3784   1    0x116   E    001  0     
+  0x3784   2    0x100   E    010  0     
+  0x3784   3    0x999   S    111  0     
+  0x3784   4    0x645   E    011  0     
+  0x3784   5    0x846   E    100  0     
+  0x3784   6    0x211   E    101  0     
+  0x3784   7    0x777   E    110  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 17 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    000  0     
+  0x3784   1    0x116   M    111  1     
+  0x3784   2    0x100   E    001  0     
+  0x3784   3    0x999   S    110  0     
+  0x3784   4    0x645   E    010  0     
+  0x3784   5    0x846   E    011  0     
+  0x3784   6    0x211   E    100  0     
+  0x3784   7    0x777   E    101  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 19 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    111  1     
+  0x3784   1    0x116   M    110  1     
+  0x3784   2    0x100   E    000  0     
+  0x3784   3    0x999   S    101  0     
+  0x3784   4    0x645   E    001  0     
+  0x3784   5    0x846   E    010  0     
+  0x3784   6    0x211   E    011  0     
+  0x3784   7    0x777   E    100  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 21 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    110  1     
+  0x3784   1    0x116   M    101  1     
+  0x3784   2    0x333   M    111  1     
+  0x3784   3    0x999   S    100  0     
+  0x3784   4    0x645   E    000  0     
+  0x3784   5    0x846   E    001  0     
+  0x3784   6    0x211   E    010  0     
+  0x3784   7    0x777   E    011  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 23 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    101  1     
+  0x3784   1    0x116   M    100  1     
+  0x3784   2    0x333   M    110  1     
+  0x3784   3    0x999   S    011  0     
+  0x3784   4    0x645   E    000  0     
+  0x3784   5    0x846   S    111  0     
+  0x3784   6    0x211   E    001  0     
+  0x3784   7    0x777   E    010  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 25 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    100  1     
+  0x3784   1    0x116   M    011  1     
+  0x3784   2    0x333   M    101  1     
+  0x3784   3    0x999   S    010  0     
+  0x3784   4    0x645   E    000  0     
+  0x3784   5    0x846   S    110  0     
+  0x3784   6    0x211   E    001  0     
+  0x3784   7    0x777   S    111  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 27 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    011  1     
+  0x3784   1    0x116   M    010  1     
+  0x3784   2    0x333   M    100  1     
+  0x3784   3    0x999   S    001  0     
+  0x3784   4    0xABC   M    111  1     
+  0x3784   5    0x846   S    101  0     
+  0x3784   6    0x211   E    000  0     
+  0x3784   7    0x777   S    110  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 29 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    010  1     
+  0x3784   1    0x116   M    111  1     
+  0x3784   2    0x333   M    011  1     
+  0x3784   3    0x999   S    001  0     
+  0x3784   4    0xABC   M    110  1     
+  0x3784   5    0x846   S    100  0     
+  0x3784   6    0x211   E    000  0     
+  0x3784   7    0x777   S    101  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 31 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    001  1     
+  0x3784   1    0x116   M    110  1     
+  0x3784   2    0x333   M    010  1     
+  0x3784   3    0x999   S    000  0     
+  0x3784   4    0xABC   M    101  1     
+  0x3784   5    0x846   S    011  0     
+  0x3784   6    0x100   M    111  1     
+  0x3784   7    0x777   S    100  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 33 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    000  1     
+  0x3784   1    0x116   M    101  1     
+  0x3784   2    0x333   M    001  1     
+  0x3784   3    0xAAA   M    111  1     
+  0x3784   4    0xABC   M    100  1     
+  0x3784   5    0x846   S    010  0     
+  0x3784   6    0x100   M    110  1     
+  0x3784   7    0x777   S    011  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 35 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0xEDC   M    111  1     
+  0x3784   1    0x116   M    100  1     
+  0x3784   2    0x333   M    000  1     
+  0x3784   3    0xAAA   M    110  1     
+  0x3784   4    0xABC   M    011  1     
+  0x3784   5    0x846   S    001  0     
+  0x3784   6    0x100   M    101  1     
+  0x3784   7    0x777   S    010  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 37 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0xEDC   M    111  1     
+  0x3784   1    0x116   M    100  1     
+  0x3784   2    0x333   M    000  1     
+  0x3784   4    0xABC   M    011  1     
+  0x3784   5    0x846   S    001  0     
+  0x3784   6    0x100   M    101  1     
+  0x3784   7    0x777   S    010  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Final Summary ====
+L1I stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+L1D stats:
+  Reads   : 12
+  Writes  : 7
+  Hits    : 5
+  Misses  : 14
+  HitRate : 26.32%
+============================================================
+
+============================================================
+Trace File : scenario_s2_rw_snoop_stepdump.txt
+Mode       : 0
+============================================================
+
+==== Cache Dump @ Trace Line 15 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    000  0     
+  0x3784   1    0x116   E    001  0     
+  0x3784   2    0x100   E    010  0     
+  0x3784   3    0x999   S    111  0     
+  0x3784   4    0x645   E    011  0     
+  0x3784   5    0x846   E    100  0     
+  0x3784   6    0x211   E    101  0     
+  0x3784   7    0x777   E    110  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 17 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    000  0     
+  0x3784   1    0x116   M    111  1     
+  0x3784   2    0x100   E    001  0     
+  0x3784   3    0x999   S    110  0     
+  0x3784   4    0x645   E    010  0     
+  0x3784   5    0x846   E    011  0     
+  0x3784   6    0x211   E    100  0     
+  0x3784   7    0x777   E    101  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 19 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    111  1     
+  0x3784   1    0x116   M    110  1     
+  0x3784   2    0x100   E    000  0     
+  0x3784   3    0x999   S    101  0     
+  0x3784   4    0x645   E    001  0     
+  0x3784   5    0x846   E    010  0     
+  0x3784   6    0x211   E    011  0     
+  0x3784   7    0x777   E    100  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 21 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    110  1     
+  0x3784   1    0x116   M    101  1     
+  0x3784   2    0x333   M    111  1     
+  0x3784   3    0x999   S    100  0     
+  0x3784   4    0x645   E    000  0     
+  0x3784   5    0x846   E    001  0     
+  0x3784   6    0x211   E    010  0     
+  0x3784   7    0x777   E    011  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 23 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    101  1     
+  0x3784   1    0x116   M    100  1     
+  0x3784   2    0x333   M    110  1     
+  0x3784   3    0x999   S    011  0     
+  0x3784   4    0x645   E    000  0     
+  0x3784   5    0x846   S    111  0     
+  0x3784   6    0x211   E    001  0     
+  0x3784   7    0x777   E    010  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 25 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    100  1     
+  0x3784   1    0x116   M    011  1     
+  0x3784   2    0x333   M    101  1     
+  0x3784   3    0x999   S    010  0     
+  0x3784   4    0x645   E    000  0     
+  0x3784   5    0x846   S    110  0     
+  0x3784   6    0x211   E    001  0     
+  0x3784   7    0x777   S    111  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 27 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    011  1     
+  0x3784   1    0x116   M    010  1     
+  0x3784   2    0x333   M    100  1     
+  0x3784   3    0x999   S    001  0     
+  0x3784   4    0xABC   M    111  1     
+  0x3784   5    0x846   S    101  0     
+  0x3784   6    0x211   E    000  0     
+  0x3784   7    0x777   S    110  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 29 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    010  1     
+  0x3784   1    0x116   M    111  1     
+  0x3784   2    0x333   M    011  1     
+  0x3784   3    0x999   S    001  0     
+  0x3784   4    0xABC   M    110  1     
+  0x3784   5    0x846   S    100  0     
+  0x3784   6    0x211   E    000  0     
+  0x3784   7    0x777   S    101  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 31 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    001  1     
+  0x3784   1    0x116   M    110  1     
+  0x3784   2    0x333   M    010  1     
+  0x3784   3    0x999   S    000  0     
+  0x3784   4    0xABC   M    101  1     
+  0x3784   5    0x846   S    011  0     
+  0x3784   6    0x100   M    111  1     
+  0x3784   7    0x777   S    100  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 33 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    000  1     
+  0x3784   1    0x116   M    101  1     
+  0x3784   2    0x333   M    001  1     
+  0x3784   3    0xAAA   M    111  1     
+  0x3784   4    0xABC   M    100  1     
+  0x3784   5    0x846   S    010  0     
+  0x3784   6    0x100   M    110  1     
+  0x3784   7    0x777   S    011  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 35 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0xEDC   M    111  1     
+  0x3784   1    0x116   M    100  1     
+  0x3784   2    0x333   M    000  1     
+  0x3784   3    0xAAA   M    110  1     
+  0x3784   4    0xABC   M    011  1     
+  0x3784   5    0x846   S    001  0     
+  0x3784   6    0x100   M    101  1     
+  0x3784   7    0x777   S    010  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 37 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0xEDC   M    111  1     
+  0x3784   1    0x116   M    100  1     
+  0x3784   2    0x333   M    000  1     
+  0x3784   4    0xABC   M    011  1     
+  0x3784   5    0x846   S    001  0     
+  0x3784   6    0x100   M    101  1     
+  0x3784   7    0x777   S    010  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Final Summary ====
+L1I stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+L1D stats:
+  Reads   : 12
+  Writes  : 7
+  Hits    : 5
+  Misses  : 14
+  HitRate : 26.32%
+============================================================
+
+============================================================
+Trace File : scenario_s2_rw_snoop_stepdump.txt
+Mode       : 1
+============================================================
+  [L2] Read from L2           0x984DE132
+  [L2] Read from L2           0x116DE12F
+  [L2] Read from L2           0x100DE130
+  [L2] Read from L2           0x999DE12E
+  [L2] Read from L2           0x645DE10A
+  [L2] Read from L2           0x846DE107
+  [L2] Read from L2           0x211DE128
+  [L2] Read from L2           0x777DE133
+
+==== Cache Dump @ Trace Line 15 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    000  0     
+  0x3784   1    0x116   E    001  0     
+  0x3784   2    0x100   E    010  0     
+  0x3784   3    0x999   S    111  0     
+  0x3784   4    0x645   E    011  0     
+  0x3784   5    0x846   E    100  0     
+  0x3784   6    0x211   E    101  0     
+  0x3784   7    0x777   E    110  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Write to L2            0x116DE123
+
+==== Cache Dump @ Trace Line 17 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    000  0     
+  0x3784   1    0x116   M    111  1     
+  0x3784   2    0x100   E    001  0     
+  0x3784   3    0x999   S    110  0     
+  0x3784   4    0x645   E    010  0     
+  0x3784   5    0x846   E    011  0     
+  0x3784   6    0x211   E    100  0     
+  0x3784   7    0x777   E    101  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Read for Ownership from L2 0x666DE135
+  [L2] Write to L2            0x666DE135
+
+==== Cache Dump @ Trace Line 19 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    111  1     
+  0x3784   1    0x116   M    110  1     
+  0x3784   2    0x100   E    000  0     
+  0x3784   3    0x999   S    101  0     
+  0x3784   4    0x645   E    001  0     
+  0x3784   5    0x846   E    010  0     
+  0x3784   6    0x211   E    011  0     
+  0x3784   7    0x777   E    100  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Read for Ownership from L2 0x333DE12C
+  [L2] Write to L2            0x333DE12C
+
+==== Cache Dump @ Trace Line 21 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    110  1     
+  0x3784   1    0x116   M    101  1     
+  0x3784   2    0x333   M    111  1     
+  0x3784   3    0x999   S    100  0     
+  0x3784   4    0x645   E    000  0     
+  0x3784   5    0x846   E    001  0     
+  0x3784   6    0x211   E    010  0     
+  0x3784   7    0x777   E    011  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 23 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    101  1     
+  0x3784   1    0x116   M    100  1     
+  0x3784   2    0x333   M    110  1     
+  0x3784   3    0x999   S    011  0     
+  0x3784   4    0x645   E    000  0     
+  0x3784   5    0x846   S    111  0     
+  0x3784   6    0x211   E    001  0     
+  0x3784   7    0x777   E    010  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 25 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    100  1     
+  0x3784   1    0x116   M    011  1     
+  0x3784   2    0x333   M    101  1     
+  0x3784   3    0x999   S    010  0     
+  0x3784   4    0x645   E    000  0     
+  0x3784   5    0x846   S    110  0     
+  0x3784   6    0x211   E    001  0     
+  0x3784   7    0x777   S    111  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Read for Ownership from L2 0xABCDE128
+  [L2] Write to L2            0xABCDE128
+
+==== Cache Dump @ Trace Line 27 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    011  1     
+  0x3784   1    0x116   M    010  1     
+  0x3784   2    0x333   M    100  1     
+  0x3784   3    0x999   S    001  0     
+  0x3784   4    0xABC   M    111  1     
+  0x3784   5    0x846   S    101  0     
+  0x3784   6    0x211   E    000  0     
+  0x3784   7    0x777   S    110  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 29 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    010  1     
+  0x3784   1    0x116   M    111  1     
+  0x3784   2    0x333   M    011  1     
+  0x3784   3    0x999   S    001  0     
+  0x3784   4    0xABC   M    110  1     
+  0x3784   5    0x846   S    100  0     
+  0x3784   6    0x211   E    000  0     
+  0x3784   7    0x777   S    101  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Read for Ownership from L2 0x100DE101
+  [L2] Write to L2            0x100DE101
+
+==== Cache Dump @ Trace Line 31 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    001  1     
+  0x3784   1    0x116   M    110  1     
+  0x3784   2    0x333   M    010  1     
+  0x3784   3    0x999   S    000  0     
+  0x3784   4    0xABC   M    101  1     
+  0x3784   5    0x846   S    011  0     
+  0x3784   6    0x100   M    111  1     
+  0x3784   7    0x777   S    100  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Read for Ownership from L2 0xAAADE101
+  [L2] Write to L2            0xAAADE101
+
+==== Cache Dump @ Trace Line 33 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    000  1     
+  0x3784   1    0x116   M    101  1     
+  0x3784   2    0x333   M    001  1     
+  0x3784   3    0xAAA   M    111  1     
+  0x3784   4    0xABC   M    100  1     
+  0x3784   5    0x846   S    010  0     
+  0x3784   6    0x100   M    110  1     
+  0x3784   7    0x777   S    011  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Read for Ownership from L2 0xEDCDE101
+  [L2] Write to L2            0x666DE100
+  [L2] Write to L2            0xEDCDE101
+
+==== Cache Dump @ Trace Line 35 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0xEDC   M    111  1     
+  0x3784   1    0x116   M    100  1     
+  0x3784   2    0x333   M    000  1     
+  0x3784   3    0xAAA   M    110  1     
+  0x3784   4    0xABC   M    011  1     
+  0x3784   5    0x846   S    001  0     
+  0x3784   6    0x100   M    101  1     
+  0x3784   7    0x777   S    010  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+  [L2] Return data to L2      0xAAADE100
+
+==== Cache Dump @ Trace Line 37 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0xEDC   M    111  1     
+  0x3784   1    0x116   M    100  1     
+  0x3784   2    0x333   M    000  1     
+  0x3784   4    0xABC   M    011  1     
+  0x3784   5    0x846   S    001  0     
+  0x3784   6    0x100   M    101  1     
+  0x3784   7    0x777   S    010  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Final Summary ====
+L1I stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+L1D stats:
+  Reads   : 12
+  Writes  : 7
+  Hits    : 5
+  Misses  : 14
+  HitRate : 26.32%
+============================================================
+
+============================================================
+Trace File : scenario_s2_rw_snoop_stepdump.txt
+Mode       : 1
+============================================================
+[DEBUG] line=4 op=8 action=RESET
+[DEBUG] line=4 op=8 addr=0x00000000 cache=ALL result=RESET_DONE
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=0,W=0,H=0,M=0)
+  [L2] Read from L2           0x984DE132
+[DEBUG] line=5 op=0 addr=0x984DE132 cache=L1D result=MISS
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=1,W=0,H=0,M=1)
+[DEBUG] L1D set=0x3784 tag=0x984 way=0 | w0:984E111 d0
+  [L2] Read from L2           0x116DE12F
+[DEBUG] line=6 op=0 addr=0x116DE12F cache=L1D result=MISS
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=2,W=0,H=0,M=2)
+[DEBUG] L1D set=0x3784 tag=0x116 way=1 | w0:984E110 d0 w1:116E111 d0
+  [L2] Read from L2           0x100DE130
+[DEBUG] line=7 op=0 addr=0x100DE130 cache=L1D result=MISS
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=3,W=0,H=0,M=3)
+[DEBUG] L1D set=0x3784 tag=0x100 way=2 | w0:984E101 d0 w1:116E110 d0 w2:100E111 d0
+  [L2] Read from L2           0x999DE12E
+[DEBUG] line=8 op=0 addr=0x999DE12E cache=L1D result=MISS
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=4,W=0,H=0,M=4)
+[DEBUG] L1D set=0x3784 tag=0x999 way=3 | w0:984E100 d0 w1:116E101 d0 w2:100E110 d0 w3:999E111 d0
+  [L2] Read from L2           0x645DE10A
+[DEBUG] line=9 op=0 addr=0x645DE10A cache=L1D result=MISS
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=5,W=0,H=0,M=5)
+[DEBUG] L1D set=0x3784 tag=0x645 way=4 | w0:984E011 d0 w1:116E100 d0 w2:100E101 d0 w3:999E110 d0 w4:645E111 d0
+  [L2] Read from L2           0x846DE107
+[DEBUG] line=10 op=0 addr=0x846DE107 cache=L1D result=MISS
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=6,W=0,H=0,M=6)
+[DEBUG] L1D set=0x3784 tag=0x846 way=5 | w0:984E010 d0 w1:116E011 d0 w2:100E100 d0 w3:999E101 d0 w4:645E110 d0 w5:846E111 d0
+  [L2] Read from L2           0x211DE128
+[DEBUG] line=11 op=0 addr=0x211DE128 cache=L1D result=MISS
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=7,W=0,H=0,M=7)
+[DEBUG] L1D set=0x3784 tag=0x211 way=6 | w0:984E001 d0 w1:116E010 d0 w2:100E011 d0 w3:999E100 d0 w4:645E101 d0 w5:846E110 d0 w6:211E111 d0
+  [L2] Read from L2           0x777DE133
+[DEBUG] line=12 op=0 addr=0x777DE133 cache=L1D result=MISS
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=8,W=0,H=0,M=8)
+[DEBUG] L1D set=0x3784 tag=0x777 way=7 | w0:984E000 d0 w1:116E001 d0 w2:100E010 d0 w3:999E011 d0 w4:645E100 d0 w5:846E101 d0 w6:211E110 d0 w7:777E111 d0
+[DEBUG] line=14 op=0 addr=0x999DE132 cache=L1D result=HIT
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=9,W=0,H=1,M=8)
+[DEBUG] L1D set=0x3784 tag=0x999 way=3 | w0:984E000 d0 w1:116E001 d0 w2:100E010 d0 w3:999S111 d0 w4:645E011 d0 w5:846E100 d0 w6:211E101 d0 w7:777E110 d0
+
+==== Cache Dump @ Trace Line 15 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    000  0     
+  0x3784   1    0x116   E    001  0     
+  0x3784   2    0x100   E    010  0     
+  0x3784   3    0x999   S    111  0     
+  0x3784   4    0x645   E    011  0     
+  0x3784   5    0x846   E    100  0     
+  0x3784   6    0x211   E    101  0     
+  0x3784   7    0x777   E    110  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+[DEBUG] line=15 op=9 addr=0x00000000 cache=ALL result=DUMP
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=9,W=0,H=1,M=8)
+  [L2] Write to L2            0x116DE123
+[DEBUG] line=16 op=1 addr=0x116DE123 cache=L1D result=HIT
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=9,W=1,H=2,M=8)
+[DEBUG] L1D set=0x3784 tag=0x116 way=1 | w0:984E000 d0 w1:116M111 d1 w2:100E001 d0 w3:999S110 d0 w4:645E010 d0 w5:846E011 d0 w6:211E100 d0 w7:777E101 d0
+
+==== Cache Dump @ Trace Line 17 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    000  0     
+  0x3784   1    0x116   M    111  1     
+  0x3784   2    0x100   E    001  0     
+  0x3784   3    0x999   S    110  0     
+  0x3784   4    0x645   E    010  0     
+  0x3784   5    0x846   E    011  0     
+  0x3784   6    0x211   E    100  0     
+  0x3784   7    0x777   E    101  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+[DEBUG] line=17 op=9 addr=0x00000000 cache=ALL result=DUMP
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=9,W=1,H=2,M=8)
+  [L2] Read for Ownership from L2 0x666DE135
+  [L2] Write to L2            0x666DE135
+[DEBUG] line=18 op=1 addr=0x666DE135 cache=L1D result=MISS
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=9,W=2,H=2,M=9)
+[DEBUG] L1D set=0x3784 tag=0x666 way=0 | w0:666M111 d1 w1:116M110 d1 w2:100E000 d0 w3:999S101 d0 w4:645E001 d0 w5:846E010 d0 w6:211E011 d0 w7:777E100 d0
+
+==== Cache Dump @ Trace Line 19 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    111  1     
+  0x3784   1    0x116   M    110  1     
+  0x3784   2    0x100   E    000  0     
+  0x3784   3    0x999   S    101  0     
+  0x3784   4    0x645   E    001  0     
+  0x3784   5    0x846   E    010  0     
+  0x3784   6    0x211   E    011  0     
+  0x3784   7    0x777   E    100  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+[DEBUG] line=19 op=9 addr=0x00000000 cache=ALL result=DUMP
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=9,W=2,H=2,M=9)
+  [L2] Read for Ownership from L2 0x333DE12C
+  [L2] Write to L2            0x333DE12C
+[DEBUG] line=20 op=1 addr=0x333DE12C cache=L1D result=MISS
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=9,W=3,H=2,M=10)
+[DEBUG] L1D set=0x3784 tag=0x333 way=2 | w0:666M110 d1 w1:116M101 d1 w2:333M111 d1 w3:999S100 d0 w4:645E000 d0 w5:846E001 d0 w6:211E010 d0 w7:777E011 d0
+
+==== Cache Dump @ Trace Line 21 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    110  1     
+  0x3784   1    0x116   M    101  1     
+  0x3784   2    0x333   M    111  1     
+  0x3784   3    0x999   S    100  0     
+  0x3784   4    0x645   E    000  0     
+  0x3784   5    0x846   E    001  0     
+  0x3784   6    0x211   E    010  0     
+  0x3784   7    0x777   E    011  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+[DEBUG] line=21 op=9 addr=0x00000000 cache=ALL result=DUMP
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=9,W=3,H=2,M=10)
+[DEBUG] line=22 op=0 addr=0x846DE10C cache=L1D result=HIT
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=10,W=3,H=3,M=10)
+[DEBUG] L1D set=0x3784 tag=0x846 way=5 | w0:666M101 d1 w1:116M100 d1 w2:333M110 d1 w3:999S011 d0 w4:645E000 d0 w5:846S111 d0 w6:211E001 d0 w7:777E010 d0
+
+==== Cache Dump @ Trace Line 23 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    101  1     
+  0x3784   1    0x116   M    100  1     
+  0x3784   2    0x333   M    110  1     
+  0x3784   3    0x999   S    011  0     
+  0x3784   4    0x645   E    000  0     
+  0x3784   5    0x846   S    111  0     
+  0x3784   6    0x211   E    001  0     
+  0x3784   7    0x777   E    010  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+[DEBUG] line=23 op=9 addr=0x00000000 cache=ALL result=DUMP
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=10,W=3,H=3,M=10)
+[DEBUG] line=24 op=0 addr=0x777DE136 cache=L1D result=HIT
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=11,W=3,H=4,M=10)
+[DEBUG] L1D set=0x3784 tag=0x777 way=7 | w0:666M100 d1 w1:116M011 d1 w2:333M101 d1 w3:999S010 d0 w4:645E000 d0 w5:846S110 d0 w6:211E001 d0 w7:777S111 d0
+
+==== Cache Dump @ Trace Line 25 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    100  1     
+  0x3784   1    0x116   M    011  1     
+  0x3784   2    0x333   M    101  1     
+  0x3784   3    0x999   S    010  0     
+  0x3784   4    0x645   E    000  0     
+  0x3784   5    0x846   S    110  0     
+  0x3784   6    0x211   E    001  0     
+  0x3784   7    0x777   S    111  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+[DEBUG] line=25 op=9 addr=0x00000000 cache=ALL result=DUMP
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=11,W=3,H=4,M=10)
+  [L2] Read for Ownership from L2 0xABCDE128
+  [L2] Write to L2            0xABCDE128
+[DEBUG] line=26 op=1 addr=0xABCDE128 cache=L1D result=MISS
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=11,W=4,H=4,M=11)
+[DEBUG] L1D set=0x3784 tag=0xABC way=4 | w0:666M011 d1 w1:116M010 d1 w2:333M100 d1 w3:999S001 d0 w4:ABCM111 d1 w5:846S101 d0 w6:211E000 d0 w7:777S110 d0
+
+==== Cache Dump @ Trace Line 27 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    011  1     
+  0x3784   1    0x116   M    010  1     
+  0x3784   2    0x333   M    100  1     
+  0x3784   3    0x999   S    001  0     
+  0x3784   4    0xABC   M    111  1     
+  0x3784   5    0x846   S    101  0     
+  0x3784   6    0x211   E    000  0     
+  0x3784   7    0x777   S    110  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+[DEBUG] line=27 op=9 addr=0x00000000 cache=ALL result=DUMP
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=11,W=4,H=4,M=11)
+[DEBUG] line=28 op=0 addr=0x116DE101 cache=L1D result=HIT
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=12,W=4,H=5,M=11)
+[DEBUG] L1D set=0x3784 tag=0x116 way=1 | w0:666M010 d1 w1:116M111 d1 w2:333M011 d1 w3:999S001 d0 w4:ABCM110 d1 w5:846S100 d0 w6:211E000 d0 w7:777S101 d0
+
+==== Cache Dump @ Trace Line 29 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    010  1     
+  0x3784   1    0x116   M    111  1     
+  0x3784   2    0x333   M    011  1     
+  0x3784   3    0x999   S    001  0     
+  0x3784   4    0xABC   M    110  1     
+  0x3784   5    0x846   S    100  0     
+  0x3784   6    0x211   E    000  0     
+  0x3784   7    0x777   S    101  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+[DEBUG] line=29 op=9 addr=0x00000000 cache=ALL result=DUMP
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=12,W=4,H=5,M=11)
+  [L2] Read for Ownership from L2 0x100DE101
+  [L2] Write to L2            0x100DE101
+[DEBUG] line=30 op=1 addr=0x100DE101 cache=L1D result=MISS
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=12,W=5,H=5,M=12)
+[DEBUG] L1D set=0x3784 tag=0x100 way=6 | w0:666M001 d1 w1:116M110 d1 w2:333M010 d1 w3:999S000 d0 w4:ABCM101 d1 w5:846S011 d0 w6:100M111 d1 w7:777S100 d0
+
+==== Cache Dump @ Trace Line 31 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    001  1     
+  0x3784   1    0x116   M    110  1     
+  0x3784   2    0x333   M    010  1     
+  0x3784   3    0x999   S    000  0     
+  0x3784   4    0xABC   M    101  1     
+  0x3784   5    0x846   S    011  0     
+  0x3784   6    0x100   M    111  1     
+  0x3784   7    0x777   S    100  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+[DEBUG] line=31 op=9 addr=0x00000000 cache=ALL result=DUMP
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=12,W=5,H=5,M=12)
+  [L2] Read for Ownership from L2 0xAAADE101
+  [L2] Write to L2            0xAAADE101
+[DEBUG] line=32 op=1 addr=0xAAADE101 cache=L1D result=MISS
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=12,W=6,H=5,M=13)
+[DEBUG] L1D set=0x3784 tag=0xAAA way=3 | w0:666M000 d1 w1:116M101 d1 w2:333M001 d1 w3:AAAM111 d1 w4:ABCM100 d1 w5:846S010 d0 w6:100M110 d1 w7:777S011 d0
+
+==== Cache Dump @ Trace Line 33 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    000  1     
+  0x3784   1    0x116   M    101  1     
+  0x3784   2    0x333   M    001  1     
+  0x3784   3    0xAAA   M    111  1     
+  0x3784   4    0xABC   M    100  1     
+  0x3784   5    0x846   S    010  0     
+  0x3784   6    0x100   M    110  1     
+  0x3784   7    0x777   S    011  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+[DEBUG] line=33 op=9 addr=0x00000000 cache=ALL result=DUMP
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=12,W=6,H=5,M=13)
+  [L2] Read for Ownership from L2 0xEDCDE101
+  [L2] Write to L2            0x666DE100
+  [L2] Write to L2            0xEDCDE101
+[DEBUG] line=34 op=1 addr=0xEDCDE101 cache=L1D result=MISS
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=12,W=7,H=5,M=14)
+[DEBUG] L1D set=0x3784 tag=0xEDC way=0 | w0:EDCM111 d1 w1:116M100 d1 w2:333M000 d1 w3:AAAM110 d1 w4:ABCM011 d1 w5:846S001 d0 w6:100M101 d1 w7:777S010 d0
+
+==== Cache Dump @ Trace Line 35 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0xEDC   M    111  1     
+  0x3784   1    0x116   M    100  1     
+  0x3784   2    0x333   M    000  1     
+  0x3784   3    0xAAA   M    110  1     
+  0x3784   4    0xABC   M    011  1     
+  0x3784   5    0x846   S    001  0     
+  0x3784   6    0x100   M    101  1     
+  0x3784   7    0x777   S    010  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+[DEBUG] line=35 op=9 addr=0x00000000 cache=ALL result=DUMP
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=12,W=7,H=5,M=14)
+  [L2] Return data to L2      0xAAADE100
+[DEBUG] line=36 op=4 addr=0xAAADE101 cache=L1D result=SNOOP_HIT
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=12,W=7,H=5,M=14)
+[DEBUG] L1D set=0x3784 tag=0xAAA way=-1 | w0:EDCM111 d1 w1:116M100 d1 w2:333M000 d1 w4:ABCM011 d1 w5:846S001 d0 w6:100M101 d1 w7:777S010 d0
+
+==== Cache Dump @ Trace Line 37 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0xEDC   M    111  1     
+  0x3784   1    0x116   M    100  1     
+  0x3784   2    0x333   M    000  1     
+  0x3784   4    0xABC   M    011  1     
+  0x3784   5    0x846   S    001  0     
+  0x3784   6    0x100   M    101  1     
+  0x3784   7    0x777   S    010  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+[DEBUG] line=37 op=9 addr=0x00000000 cache=ALL result=DUMP
+[DEBUG] stats L1I(R=0,W=0,H=0,M=0) L1D(R=12,W=7,H=5,M=14)
+
+==== Final Summary ====
+L1I stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+L1D stats:
+  Reads   : 12
+  Writes  : 7
+  Hits    : 5
+  Misses  : 14
+  HitRate : 26.32%
+============================================================
+
+============================================================
+Trace File : scenario_s2_rw_snoop_stepdump.txt
+Mode       : 0
+============================================================
+
+==== Cache Dump @ Trace Line 15 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    000  0     
+  0x3784   1    0x116   E    001  0     
+  0x3784   2    0x100   E    010  0     
+  0x3784   3    0x999   S    111  0     
+  0x3784   4    0x645   E    011  0     
+  0x3784   5    0x846   E    100  0     
+  0x3784   6    0x211   E    101  0     
+  0x3784   7    0x777   E    110  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 17 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x984   E    000  0     
+  0x3784   1    0x116   M    111  1     
+  0x3784   2    0x100   E    001  0     
+  0x3784   3    0x999   S    110  0     
+  0x3784   4    0x645   E    010  0     
+  0x3784   5    0x846   E    011  0     
+  0x3784   6    0x211   E    100  0     
+  0x3784   7    0x777   E    101  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 19 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    111  1     
+  0x3784   1    0x116   M    110  1     
+  0x3784   2    0x100   E    000  0     
+  0x3784   3    0x999   S    101  0     
+  0x3784   4    0x645   E    001  0     
+  0x3784   5    0x846   E    010  0     
+  0x3784   6    0x211   E    011  0     
+  0x3784   7    0x777   E    100  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 21 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    110  1     
+  0x3784   1    0x116   M    101  1     
+  0x3784   2    0x333   M    111  1     
+  0x3784   3    0x999   S    100  0     
+  0x3784   4    0x645   E    000  0     
+  0x3784   5    0x846   E    001  0     
+  0x3784   6    0x211   E    010  0     
+  0x3784   7    0x777   E    011  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 23 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    101  1     
+  0x3784   1    0x116   M    100  1     
+  0x3784   2    0x333   M    110  1     
+  0x3784   3    0x999   S    011  0     
+  0x3784   4    0x645   E    000  0     
+  0x3784   5    0x846   S    111  0     
+  0x3784   6    0x211   E    001  0     
+  0x3784   7    0x777   E    010  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 25 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    100  1     
+  0x3784   1    0x116   M    011  1     
+  0x3784   2    0x333   M    101  1     
+  0x3784   3    0x999   S    010  0     
+  0x3784   4    0x645   E    000  0     
+  0x3784   5    0x846   S    110  0     
+  0x3784   6    0x211   E    001  0     
+  0x3784   7    0x777   S    111  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 27 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    011  1     
+  0x3784   1    0x116   M    010  1     
+  0x3784   2    0x333   M    100  1     
+  0x3784   3    0x999   S    001  0     
+  0x3784   4    0xABC   M    111  1     
+  0x3784   5    0x846   S    101  0     
+  0x3784   6    0x211   E    000  0     
+  0x3784   7    0x777   S    110  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 29 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    010  1     
+  0x3784   1    0x116   M    111  1     
+  0x3784   2    0x333   M    011  1     
+  0x3784   3    0x999   S    001  0     
+  0x3784   4    0xABC   M    110  1     
+  0x3784   5    0x846   S    100  0     
+  0x3784   6    0x211   E    000  0     
+  0x3784   7    0x777   S    101  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 31 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    001  1     
+  0x3784   1    0x116   M    110  1     
+  0x3784   2    0x333   M    010  1     
+  0x3784   3    0x999   S    000  0     
+  0x3784   4    0xABC   M    101  1     
+  0x3784   5    0x846   S    011  0     
+  0x3784   6    0x100   M    111  1     
+  0x3784   7    0x777   S    100  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 33 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0x666   M    000  1     
+  0x3784   1    0x116   M    101  1     
+  0x3784   2    0x333   M    001  1     
+  0x3784   3    0xAAA   M    111  1     
+  0x3784   4    0xABC   M    100  1     
+  0x3784   5    0x846   S    010  0     
+  0x3784   6    0x100   M    110  1     
+  0x3784   7    0x777   S    011  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 35 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0xEDC   M    111  1     
+  0x3784   1    0x116   M    100  1     
+  0x3784   2    0x333   M    000  1     
+  0x3784   3    0xAAA   M    110  1     
+  0x3784   4    0xABC   M    011  1     
+  0x3784   5    0x846   S    001  0     
+  0x3784   6    0x100   M    101  1     
+  0x3784   7    0x777   S    010  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Cache Dump @ Trace Line 37 ====
+
+L1I contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  ----     ---- ----   ---- ---- ----- 
+
+L1D contents (valid lines only):
+  Set      Way  Tag    MESI LRU  Dirty 
+  ----     ---- ----   ---- ---- ----- 
+  0x3784   0    0xEDC   M    111  1     
+  0x3784   1    0x116   M    100  1     
+  0x3784   2    0x333   M    000  1     
+  0x3784   4    0xABC   M    011  1     
+  0x3784   5    0x846   S    001  0     
+  0x3784   6    0x100   M    101  1     
+  0x3784   7    0x777   S    010  0     
+  ----     ---- ----   ---- ---- ----- 
+==== End Dump ====
+
+==== Final Summary ====
+L1I stats:
+  Reads   : 0
+  Writes  : 0
+  Hits    : 0
+  Misses  : 0
+  HitRate : 0.00%
+L1D stats:
+  Reads   : 12
+  Writes  : 7
+  Hits    : 5
+  Misses  : 14
+  HitRate : 26.32%
+============================================================
+

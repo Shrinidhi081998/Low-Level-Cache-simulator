@@ -1,0 +1,37 @@
+# Scenario S2: Read/write/snoop on set 0x3784.
+# Starts from reset and preloads Scenario 1 state, then executes Scenario 2 operations.
+# Includes dump after each Scenario 2 step.
+8
+0 984DE132
+0 116DE12F
+0 100DE130
+0 999DE12E
+0 645DE10A
+0 846DE107
+0 211DE128
+0 777DE133
+
+0 999DE132
+9
+1 116DE123
+9
+1 666DE135
+9
+1 333DE12C
+9
+0 846DE10C
+9
+0 777DE136
+9
+1 ABCDE128
+9
+0 116DE101
+9
+1 100DE101
+9
+1 AAADE101
+9
+1 EDCDE101
+9
+4 AAADE101
+9

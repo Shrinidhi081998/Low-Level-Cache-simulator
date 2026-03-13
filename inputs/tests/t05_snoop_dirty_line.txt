@@ -1,0 +1,5 @@
+# T05: Snoop request on dirty line (opcode 4) should return data and invalidate
+8
+1 EDCDE101
+4 EDCDE101
+9
